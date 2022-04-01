@@ -8,7 +8,7 @@ Users should be able to:
 
 ### Demo
 
-[Technology Page](https://xzayedx.github.io/space-tourism-collab-team-react/technology-vehicle.html)
+- [Technology Page](https://xzayedx.github.io/space-tourism-collab-team-react/technology-vehicle.html)
 
 ### NOTE
 - No frameworks or libraries were used to complete this challange.
