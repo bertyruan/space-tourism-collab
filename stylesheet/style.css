@@ -1,0 +1,736 @@
+:root {
+    --white: #fff;
+    --black: #0B0D17;
+    --article-color: #D0D6F9;
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+
+/**************************************************************/
+
+body {
+    display: flex;
+    background-image: url("../assets/technology/background-technology-mobile.jpg");
+    background-repeat: no-repeat;
+    background-size: 375px 710px;
+    position: relative;
+    width: 375px;
+    height: 710px;
+}
+
+main {
+    position: relative;
+    width: 375px;
+    height: 710px;
+    font-family: 'Barlow';
+    /*background-color: #0B0D17;*/
+}
+
+.logo {
+    display: block;
+    width: 100%;
+    background-image: url("../assets/shared/logo.svg");
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: 24px;
+    top: 24px;
+    padding: 5px;
+}
+
+
+/****** hamburger Cross *******/
+
+span>img {
+    position: absolute;
+    width: 24px;
+    height: 21px;
+    left: 327px;
+    top: 33px;
+}
+
+
+/* The Overlay (background) */
+
+.overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */
+    height: 0;
+    width: 100%;
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    right: 0;
+    top: 0;
+    background-color: rgb(0, 0, 0);
+    /* Black fallback color */
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Black w/opacity */
+    overflow-y: hidden;
+    /* Disable horizontal scroll */
+    transition: 0.5s;
+    /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+    backdrop-filter: blur(81.5485px);
+}
+
+
+/* Position the content inside the overlay */
+
+.overlay-content {
+    position: relative;
+    top: 25%;
+    /* 25% from the top */
+    width: 100%;
+    /* 100% width */
+    text-align: center;
+    /* Centered text/links */
+    margin-top: 30px;
+    /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+.overlay li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.desktop-numbers {
+    display: none;
+}
+
+
+/* The navigation links inside the overlay */
+
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    /* Display block instead of inline */
+    transition: 0.3s;
+    /* Transition effects on hover (color) */
+    text-align: center;
+}
+
+
+/* When you mouse over the navigation links, change their color */
+
+.overlay a:hover,
+.overlay a:focus {
+    color: #f1f1f1;
+}
+
+
+/* Position the close button (top right corner) */
+
+.overlay .closebtn {
+    position: absolute;
+    top: 32px;
+    right: 25px;
+    font-size: 60px;
+    padding: 10px;
+    background-image: url(../assets/shared/icon-close.svg);
+}
+
+
+/** END **/
+
+section>h1 {
+    position: absolute;
+    width: 176px;
+    height: 19px;
+    left: 115px;
+    top: 88px;
+    text-align: center;
+    color: var(--white);
+    font-family: 'Barlow Condensed';
+    font-style: normal;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2.7px;
+}
+
+.dark {
+    position: absolute;
+    height: 19px;
+    left: 0%;
+    /*right: 90.34%;*/
+    left: -15px;
+    top: -1.5px;
+    font-family: 'Barlow Condensed';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    color: var(--white);
+    mix-blend-mode: normal;
+    opacity: 0.25;
+}
+
+
+/* Background Image */
+
+.bg-img-mobile {
+    position: absolute;
+    display: block;
+    width: 375px;
+    object-fit: contain;
+    background-origin: content-box;
+    box-sizing: border-box;
+    left: 0px;
+    top: 139px;
+}
+
+.bg-img-desktop {
+    display: none;
+}
+
+.pageNumbersNav {
+    display: flex;
+}
+
+nav>.pageNumbers {
+    position: absolute;
+    width: 152px;
+    height: 40px;
+    left: 95px;
+    top: 335px;
+}
+
+
+/**************************************/
+
+
+/* Buttons */
+
+
+/* Style the buttons */
+
+nav>.pageNumbers>#myDIV {
+    position: absolute;
+    width: 172px;
+    height: 40px;
+    left: -5px;
+    top: 6px;
+}
+
+nav>.pageNumbers>#myDIV>.btn {
+    display: inline;
+    text-decoration: none;
+    color: var(--white);
+    padding: 1.2rem 1.6rem;
+    border: 0.1px solid var(--white);
+    border-radius: 50%;
+    font-size: 1.5rem;
+    margin-left: 0.66rem;
+    outline: none;
+    transition: all 0.8s;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: 1px solid var(--white);
+    cursor: pointer;
+    overflow: hidden;
+    margin-left: 1.3rem;
+}
+
+
+/* Style the active class (and buttons on mouse-over) */
+
+nav>.pageNumbers>#myDIV>.active,
+nav>.pageNumbers>#myDIV>.btn:hover {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+.article-mobile {
+    position: relative;
+    color: var(--white);
+    display: block;
+}
+
+.article-mobile>h1 {
+    /* THE TERMINOLOGY… */
+    display: inline-block;
+    position: absolute;
+    left: 11rem;
+    right: 29.66%;
+    top: 40.5rem;
+    font-family: 'Barlow Condensed';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+    text-align: center;
+    letter-spacing: 2.3625px;
+    color: var(--article-color);
+    text-transform: uppercase;
+}
+
+.article-mobile>h2 {
+    /* LAUNCH VEHICLE */
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 43.2rem;
+    font-family: 'Bellefair';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    /* identical to box height */
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--white);
+    letter-spacing: 2.7px;
+}
+
+.article-mobile>h2.mobile-spaceport {
+    font-size: 21px;
+    left: 0px;
+}
+
+.article-mobile>h2.mobile-spacapcsule {
+    font-size: 20px;
+}
+
+.article-mobile>p {
+    /* A launch vehicle or */
+    position: absolute;
+    height: 175px;
+    left: 0%;
+    right: 0%;
+    top: 48rem;
+    font-family: 'Barlow';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 25px;
+    /* or 167% */
+    text-align: center;
+    color: var(--article-color);
+    margin: 0 23px;
+}
+
+.article-tab {
+    display: none;
+}
+
+.article-desktop {
+    display: none;
+}
+
+
+/************************************/
+
+@media only screen and (min-width: 600px) {
+    /*Tablets [601px -> 1200px]*/
+    body {
+        display: flex;
+        background-image: url("../assets/technology/background-technology-tablet.jpg");
+        background-repeat: no-repeat;
+        background-size: 768px 1024px;
+        position: relative;
+        width: 768px;
+        height: 1024px;
+    }
+    .logo {
+        position: absolute;
+        width: 48px;
+        height: 48px;
+        left: 39px;
+        top: 24px;
+    }
+    span>img {
+        display: none;
+    }
+    .overlay {
+        display: block;
+        width: 450px;
+        height: 96px;
+        background: rgba(255, 255, 255, 0.04);
+        backdrop-filter: blur(81.5485px);
+    }
+    .overlay-content {
+        top: 0;
+        display: inline;
+    }
+    .overlay .closebtn {
+        display: none;
+    }
+    .overlay ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        display: flex;
+        flex-direction: row;
+        top: 39px;
+        left: 30px;
+        text-align: left;
+        width: 80%;
+    }
+    .overlay a {
+        display: inline;
+        color: var(--white);
+        font-family: 'Barlow Condensed';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        padding: 0;
+        margin: 0;
+        text-transform: uppercase;
+        /* identical to box height */
+        letter-spacing: 2.3625px;
+        padding-left: 12px;
+        margin-left: 10px;
+        text-align: left;
+        border-bottom: 3px solid transparent;
+        padding-bottom: 36px;
+        width: 25%;
+    }
+    .overlay a:nth-child(2) {
+        padding-left: 18px;
+    }
+    .overlay a:nth-child(3) {
+        padding-left: 18px;
+    }
+    .overlay a:nth-child(4) {
+        padding-left: 18px;
+    }
+    /* active */
+    .overlay a.active {
+        border-bottom: 2px solid var(--white);
+        display: block;
+        width: 90%;
+    }
+    .bg-img-mobile {
+        display: block;
+        top: 220px;
+        width: 768px;
+        height: 310px;
+    }
+    section>h1 {
+        position: absolute;
+        width: 217px;
+        height: 24px;
+        left: 38.5px;
+        top: 136px;
+    }
+    .dark {
+        left: 2px;
+    }
+    nav>.pageNumbers {
+        position: absolute;
+        width: 210px;
+        height: 60px;
+        left: 279px;
+        top: 586px;
+    }
+    /* Style the buttons */
+    nav>.pageNumbers>#myDIV {
+        position: absolute;
+        width: 210px;
+        height: 60px;
+        left: -5px;
+        top: -3px;
+    }
+    nav>.pageNumbers>#myDIV>.btn {
+        padding: 1.45rem 2.1rem;
+        font-size: 24px;
+        text-align: center;
+        font-family: 'Bellefair';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 28px;
+        /* identical to box height */
+        text-align: center;
+        letter-spacing: 1.5px;
+        margin-left: 11px;
+    }
+    nav>.pageNumbers>#myDIV>.btn:nth-child(1) {
+        padding: 1.45rem 2.25rem;
+    }
+    .article-mobile {
+        position: absolute;
+        width: 458px;
+        height: 237px;
+        left: 155px;
+        top: 290px;
+    }
+    .article-mobile>h1 {
+        width: 150px;
+        height: 19px;
+        font-family: 'Barlow Condensed';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        letter-spacing: 2.3px;
+        right: 0;
+        left: 15.5rem;
+        top: 399px;
+    }
+    .article-mobile>h2 {
+        font-size: 40px;
+        width: 457px;
+        height: 46px;
+        font-size: 40px;
+        top: 443px;
+    }
+    .article-mobile>h2.mobile-spacapcsule {
+        width: 457px;
+        height: 46px;
+        font-size: 40px;
+        top: 443px;
+    }
+    .article-mobile>h2.mobile-spaceport {
+        position: absolute;
+        width: 458px;
+        height: 237px;
+        font-size: 40px;
+        left: 0px;
+        top: 443px;
+    }
+    .article-mobile-p {
+        display: none;
+    }
+    article>.article-tab {
+        display: block;
+        position: absolute;
+        top: 497px;
+        left: -34.6px;
+        width: 480px;
+        height: 140px;
+        font-family: 'Barlow';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 28px;
+        text-align: center;
+    }
+    article>.article-desktop {
+        display: none;
+    }
+}
+
+
+/* Large devices (desktops, 992px and up) */
+
+@media (min-width: 992px) {
+    body {
+        position: relative;
+        width: 1440px;
+        height: 900px;
+        background-image: url("../assets/technology/background-technology-desktop.jpg");
+        background-repeat: no-repeat;
+        background-size: 1440px 900px;
+    }
+    .bg-img-mobile {
+        display: none;
+    }
+    .bg-img-desktop {
+        display: block;
+        position: absolute;
+        width: 515px;
+        height: 527px;
+        left: 925px;
+        top: 272px;
+        animation: 1s ease-out 0s 1 slideInLeft;
+    }
+    @keyframes slideInLeft {
+        0% {
+            transform: translateX(-100%);
+        }
+        100% {
+            transform: translateX(0);
+        }
+    }
+    .logo {
+        position: absolute;
+        width: 48px;
+        height: 48px;
+        left: 55px;
+        top: 64px;
+    }
+    .logo::after {
+        content: '';
+        position: absolute;
+        width: 473px;
+        height: 1px;
+        left: 107px;
+        top: 24px;
+        background: var(--white);
+        mix-blend-mode: normal;
+        opacity: 0.25;
+        z-index: 2;
+    }
+    .overlay {
+        display: block;
+        width: 830px;
+        height: 96px;
+        left: 610px;
+        margin-top: 40px;
+    }
+    .overlay-content a {
+        margin-left: 42px;
+        font-size: 16px;
+        line-height: 19px;
+        letter-spacing: 2.7px;
+        text-align: center;
+    }
+    .overlay-content .active {
+        padding: 0;
+        padding-bottom: 36px;
+    }
+    section>h1 {
+        position: absolute;
+        width: 305px;
+        height: 34px;
+        left: 166.5px;
+        top: 212px;
+        font-family: 'Barlow Condensed';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 24px;
+        letter-spacing: 4.725px;
+    }
+    .dark {
+        font-size: 24px;
+        position: absolute;
+        height: 34px;
+        top: -2px;
+        left: -5px;
+        font-size: 28px;
+        line-height: 34px;
+        /* identical to box height */
+        letter-spacing: 4.725px;
+        color: var(--white);
+        mix-blend-mode: normal;
+        opacity: 0.25;
+    }
+    .desktop-numbers {
+        display: inline;
+        top: calc(50% - 19px/2);
+        font-family: 'Barlow Condensed';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        letter-spacing: 2.7px;
+        padding-right: 10px;
+    }
+    nav>.pageNumbers {
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        left: 65px;
+        top: 83px;
+    }
+    /* Style the buttons */
+    nav>.pageNumbers>#myDIV {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        left: 65px;
+        top: 289px;
+    }
+    nav>.pageNumbers>#myDIV>.btn {
+        width: 80px;
+        height: 80px;
+        padding: 4rem 0.0rem;
+        font-family: 'Bellefair';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 3px;
+        /* identical to box height */
+        text-align: center;
+        letter-spacing: 2.5px;
+        margin-left: 11px;
+        margin-bottom: 3rem;
+    }
+    nav>.pageNumbers>#myDIV>.btn:nth-child(1) {
+        padding: 4rem 0.0rem;
+    }
+    article>.article-tab {
+        display: none;
+    }
+    article>.article-desktop {
+        display: block;
+        height: 192px;
+        width: 444px;
+        text-align: left;
+        font-family: 'Barlow';
+        font-style: normal;
+        font-weight: 400;
+        line-height: 32px;
+        left: -26px;
+        top: 490px;
+    }
+    .article-mobile {
+        position: absolute;
+        width: 444px;
+        height: 303px;
+        left: 325px;
+        top: 0px;
+    }
+    .article-mobile>h1 {
+        width: 150px;
+        height: 19px;
+        color: var(--article-color);
+        font-family: 'Barlow Condensed';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        text-align: left;
+        line-height: 19px;
+        letter-spacing: 2.3px;
+        right: 0;
+        left: 0;
+        top: 380px;
+    }
+    .article-mobile>h2 {
+        width: 457px;
+        height: 64px;
+        font-size: 46px;
+        line-height: 64px;
+        top: 410px;
+        left: -5px;
+        text-align: left;
+    }
+    .article-mobile>h2.mobile-spacapcsule {
+        width: 457px;
+        height: 64px;
+        font-size: 46px;
+        line-height: 64px;
+        top: 410px;
+        left: -5px;
+        text-align: left;
+    }
+    .article-mobile>h2.mobile-spaceport {
+        width: 457px;
+        height: 64px;
+        font-size: 46px;
+        line-height: 64px;
+        top: 410px;
+        left: -5px;
+        text-align: left;
+    }
+}
